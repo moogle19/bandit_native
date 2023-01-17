@@ -21,7 +21,8 @@ defmodule BanditNative.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.27"}
+      {:rustler, "~> 0.27"},
+      {:rustler_precompiled, "~> 0.5"}
     ]
   end
 end
