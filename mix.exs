@@ -26,7 +26,8 @@ defmodule BanditNative.MixProject do
   defp deps do
     [
       {:rustler_precompiled, "~> 0.5"},
-      {:rustler, ">= 0.0.0", optional: true}
+      {:rustler, ">= 0.0.0", optional: true},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
@@ -36,7 +37,15 @@ defmodule BanditNative.MixProject do
       maintainers: ["Kevin Seidel"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/moogle19/bandit_native"},
-      files: ~w(.formatter.exs mix.exs README.md lib native checksum-*.exs)
+      files: [
+        "lib",
+        "native/bandit_native/.cargo",
+        "native/bandit_native/src",
+        "native/bandit_native/Cargo*",
+        "checksum-*.exs",
+        "mix.exs",
+        "README.md"
+      ]
     ]
   end
 end
