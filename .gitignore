@@ -24,3 +24,7 @@ bandit_native-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+checksum-*
+
+/priv/native
