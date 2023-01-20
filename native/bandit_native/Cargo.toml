@@ -11,4 +11,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 rustler = "0.27.0"
-simdutf8 = { version = "0.1.4", features = ["aarch64_neon"] }
+simdutf8 = { git = "https://github.com/moogle19/simdutf8", branch = "export_validate", features = ["aarch64_neon"] }
