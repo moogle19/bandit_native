@@ -20,4 +20,9 @@ fn mask<'a>(env: Env<'a>, payload: Binary<'a>, mask_value: u32) -> NifResult<Bin
     Ok(Binary::from_owned(owned, env))
 }
 
-rustler::init!("Elixir.Bandit.Native", [mask]);
+#[rustler::nif]
+fn valid_utf8(string: Binary) -> bool {
+    simdutf8::basic::from_utf8(string.as_slice()).is_ok()
+}
+
+rustler::init!("Elixir.Bandit.Native", [mask, valid_utf8]);
